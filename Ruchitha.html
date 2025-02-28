@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support Review</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f5ec;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .feedback-container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .feedback-container h2 {
+            margin-bottom: 20px;
+        }
+        .emoji-group {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        .emoji-group input[type="radio"] {
+            display: none;
+        }
+        .emoji-label {
+            font-size: 50px;
+            cursor: pointer;
+        }
+        input[type="radio"]:checked + .emoji-label {
+            box-shadow: 0 0 5px #00bfa5;
+            border-radius: 50%;
+        }
+        .submit-button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<div class="feedback-container">
+    <h2>How satisfied are you with our customer support performance?</h2>
+    <form action="/submit-review" method="POST">
+        <div class="emoji-group">
+            <div>
+                <input type="radio" id="unhappy" name="feedback" value="Unhappy">
+                <label for="unhappy" class="emoji-label">😔</label><br>
+                <span>Unhappy</span>
+            </div>
+            <div>
+                <input type="radio" id="neutral" name="feedback" value="Neutral">
+                <label for="neutral" class="emoji-label">😐</label><br>
+                <span>Neutral</span>
+            </div>
+            <div>
+                <input type="radio" id="satisfied" name="feedback" value="Satisfied">
+                <label for="satisfied" class="emoji-label">😍</label><br>
+                <span>Satisfied</span>
+            </div>
+        </div>
+        <button type="submit" class="submit-button">Send Review</button>
+    </form>
+</div>
+
+</body>
+</html>
